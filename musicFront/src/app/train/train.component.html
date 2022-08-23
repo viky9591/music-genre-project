@@ -1,0 +1,66 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 class="example-app-name">Train The Model</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav
+    #sidenav
+    class="example-sidenav"
+    mode="side"
+    opened="true"
+    (mouseenter)="mouseenter()"
+    (mouseleave)="mouseleave()"
+  >
+    <mat-nav-list>
+      <mat-list-item routerLink="" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing"
+          >Parent Menu</span
+        >
+        <mat-icon mat-list-icon>home</mat-icon>
+      </mat-list-item>
+      <mat-list-item routerLink="/train" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing"
+          >Train DataSet</span
+        >
+        <mat-icon mat-list-icon>queue_music</mat-icon>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/identify" class="parent">
+        <span class="full-width" *ngIf="isExpanded || isShowing"
+          >Detect Music Genre</span
+        >
+        <mat-icon mat-list-icon>music_note</mat-icon>
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-nav-list> </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-grid-list cols="1" rowHeight="2:1.2">
+    <mat-grid-tile>
+      <mat-spinner *ngIf="loader"></mat-spinner>
+      <mat-card *ngIf="!loader" class="card">
+        <mat-card-subtitle>train</mat-card-subtitle>
+        <mat-card-title>Train The Algorithm</mat-card-title>
+        <mat-card-content>
+          <p>this will train the machine learning Algorithm
+            with GTZAN DataSet..
+          </p>
+        </mat-card-content>
+
+        <br />
+        <button
+          mat-raised-button
+          class="sub"
+          (click)="trainAlgorithm()"
+          color="primary"
+        >
+          Submit
+        </button>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</mat-sidenav-container>
+<router-outlet></router-outlet>

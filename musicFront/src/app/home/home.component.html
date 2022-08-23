@@ -1,0 +1,113 @@
+<mat-toolbar color="primary" class="example-toolbar">
+	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	<h1 class="example-app-name">Home Page</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-nav-list>
+			<mat-list-item routerLink="" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Parent Menu</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+
+				<!-- <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon> -->
+			</mat-list-item>
+      <mat-list-item routerLink="train" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Train DataSet</span>
+				<mat-icon mat-list-icon>queue_music</mat-icon>
+
+
+			</mat-list-item>
+
+
+      <mat-list-item routerLink="identify" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Detect Music Genre</span>
+				<mat-icon mat-list-icon>music_note</mat-icon>
+
+
+			</mat-list-item>
+			<!-- <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="...">Submenu Item 1</a>
+				<a mat-list-item href="...">Submenu Item 2</a>
+				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+					<span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+				</mat-list-item>
+				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+					<mat-list-item>SubSubmenu Item 1</mat-list-item>
+					<mat-list-item>SubSubmenu Item 2</mat-list-item>
+				</div>
+			</div> -->
+		</mat-nav-list>
+    <mat-nav-list>
+</mat-nav-list>
+	</mat-sidenav>
+
+	<mat-grid-list cols="1" rowHeight="2:1.5">
+    <mat-grid-tile>
+      <!-- <mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card> -->
+
+
+
+        <h1 class="animate-charcter headding">Music Genre Identification
+
+      Using Machine Learning</h1>
+
+
+
+
+
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="container1">
+        <h2 class="title1">
+          <span class="title-word title-word-1">INT</span>
+          <span class="title-word title-word-2">ROD</span>
+          <span class="title-word title-word-3">UCT</span>
+          <span class="title-word title-word-4">ION</span>
+        </h2>
+     <p class="text2text">  Music Genre Classification –Automatically classify different musical genres <br>
+          In this I developed a deep learning project to automatically <br>
+          classify different musical genres from audio files. It will classify these <br>
+          audio files using their low-level features of frequency and time domain. <br>
+          </p>
+      </div>
+
+    </mat-grid-tile>
+    <!-- <mat-grid-tile >
+      ma
+
+    </mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile> -->
+  </mat-grid-list>
+
+
+  <!-- <div [@photosAnimation]="photos.length">
+    <div *ngFor="let photo of photos">
+        <img  [src]="photo" >
+    </div>
+  </div> -->
+
+</mat-sidenav-container>
+<router-outlet></router-outlet>
+
+
+

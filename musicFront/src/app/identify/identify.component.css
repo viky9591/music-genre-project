@@ -1,0 +1,17 @@
+.sub{
+  width: 100%;
+}
+
+.card{
+  width: 400px;
+}
+.mat-form-field{
+  width: 100%;
+}
+
+.mat-spinner {
+  position: relative;
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 300px;
+}

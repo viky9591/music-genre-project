@@ -1,0 +1,28 @@
+<!-- <h1 mat-dialog-title>Start Algorithm</h1>
+<div mat-dialog-content>
+  Would you like to start algorrthm to identifi genre?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Yes</button>
+</div> -->
+
+<div class="header">
+  <h2 mat-dialog-title>{{data?.title}}</h2>
+  <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<div mat-dialog-content>
+  <p>{{data?.message}}</p>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button [mat-dialog-close]="false">
+      {{data?.cancelCaption}}
+  </button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true">
+      {{data?.confirmCaption}}
+  </button>
+</div>
